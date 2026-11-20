@@ -38,6 +38,8 @@ bss_clear:
     addi t5, t5, 8
     bltu t5, t6, bss_clear
     
+    call plic_init
+    
     la t0, kmain
     csrw mepc, t0
     

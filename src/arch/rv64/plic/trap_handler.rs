@@ -1,5 +1,5 @@
+mod plic;
 use crate::uart;
-use crate::plic;
 
 fn is_interrupt(signal: usize) -> bool {
     ((signal) >> 63) != 0

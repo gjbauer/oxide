@@ -31,7 +31,8 @@ macro_rules! plic_mclaim {
     };
 }
 
-pub fn plic_init() {
+#[unsafe(no_mangle)]
+pub extern "C" fn plic_init() {
     unsafe {
         // Set UART IRQ 10 priority to 1
         core::ptr::write_volatile(
